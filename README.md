@@ -3,6 +3,25 @@
 > All of the code will be in Python and will be implemented in a way that prioritizes simplicity over efficiency.
 > **Again, these are not necessarily the optimal way to implement these functions.**
 
+## Table of Contents
+- [[#Length|Length]]
+- [[#Shape|Shape]]
+- [[#Rank/Depth|Rank/Depth]]
+- [[#Take|Take]]
+- [[#Drop|Drop]]
+- [[#Range|Range]]
+- [[#Reverse|Reverse]]
+- [[#Sort|Sort]]
+- [[#Map|Map]]
+- [[#Fold/Reduce|Fold/Reduce]]
+- [[#Scan|Scan]]
+- [[#Zip/Couple/Stitch|Zip/Couple/Stitch]]
+- [[#Keep/Replicate|Keep/Replicate]]
+- [[#Filter|Filter]]
+- [[#Window/Roll|Window/Roll]]
+- [[#Group|Group]]
+- [[#Partition|Partition]]
+
 ## Length
 ```python
 def length(xs : list[any]) -> int:
