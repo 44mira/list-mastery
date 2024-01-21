@@ -6,7 +6,7 @@
 ## Table of Contents
 - [Length](README.md#Length)
 - [Shape](README.md#Shape)
-- [Rank/Depth](README.md#Rank/Depth)
+- [Rank/Depth](README.md#RankDepth)
 - [Take](README.md#Take)
 - [Drop](README.md#Drop)
 - [Range](README.md#Range)
