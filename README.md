@@ -12,6 +12,7 @@
 - [Range](#Range)
 - [Reverse](Reverse)
 - [Sort](#Sort)
+- [Nub/Deduplicate](#Nub/Deduplicate)
 - [Map](#Map)
 - [Fold/Reduce](Fold/Reduce)
 - [Scan](#Scan)
