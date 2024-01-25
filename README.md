@@ -41,9 +41,6 @@ def length(xs : list[any]) -> int:
 - Python has a built-in `len` function.
 
 ## Shape
-```apl
-shape ← ⍴                  ⍝ This code is in APL.
-```
 - Most high-level languages do not put a restriction on shape, hence a proper implementation would be not practical.
 
 ## Rank/Depth
