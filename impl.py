@@ -1,4 +1,5 @@
 from typing import Callable
+from itertools import product
 
 def length(xs : list[any]) -> int:
     """ 
@@ -48,6 +49,16 @@ def sort(xs : list[any]) -> list[any]:
                 xs[j], xs[j+1] = xs[j+1], xs[j]
     return xs
 
+def nub(xs : list[any]) -> list[any]:
+    """ 
+    Removes the duplicates in a list, preserving order
+
+    :param xs: the list to be deduplicated
+    :return:   the list with unique elements
+    """
+    seen = set()    # the seen.add() will always return None, the `or` branch is simply there to execute the add.
+    return [x for x in xs if not (x in seen or seen.add(x))] 
+
 def rank(xs : any) -> int:
     """ 
     Returns the rank of a list, checking the first element recursively
@@ -96,6 +107,21 @@ def map(xs : list[any], f : Callable[[any], any]) -> list[any]:
     res = [] 
     for x in xs: res.append(f(x))
     return res
+
+def select(xs : list[int], ys : list[any]) -> list[any]:
+    return map(xs, lambda x: ys[x])
+
+def indexof(xs : list[any], target : any) -> int:
+    """
+    Return the index of an item from a list, returns the size length + 1 when not found
+
+    :param xs:     the list to be searched
+    :param target: the item to be searched for
+    :return:       index of the searched item or length + 1 when not found
+    """
+    for i, x in enumerate(xs):
+        if target == x: return i
+    return len(xs)
 
 def reduce(xs : list[any], f : Callable[[any, any], any], a : any = None) -> any:
     """ 
@@ -196,6 +222,26 @@ def window(xs : list[any], r : int) -> list[any]:
         r += 1
     return res
 
+def table(xs : list[any], ys : list[any], f : Callable[[any, any], any]):
+    """
+    Takes two lists and performs a function f on all pairs of elements between
+    Also known as cartesian product.
+    
+    :param xs: list 1
+    :param ys: list 2
+    :param f:  the binary function to be applied on element pairs
+    :return:   the mapped cartesian product of the two lists
+    """
+    res = [[0] * len(ys) for _ in range(len(xs))]   # initialize the n * m matrix to be returned
+                                                    # n and m being the lengths of xs and ys, respectively
+    for i, x in enumerate(xs):
+        for j, y in enumerate(ys):
+            res[i][j] = f(x, y)
+    return res
+
+def _table(xs : list[any], ys : list[any], f : Callable[[any, any], any]):
+    return map(lambda t : f(t[0],t[1]), product(xs, ys))
+
 def group(xs : list[any], mask : list[int]) -> list[list[any]]:
     """
     Groups elements based on a mask of keys
@@ -232,7 +278,5 @@ def partition(xs : list[any], mask : list[int]) -> list[list[any]]:
     if curr: res.append(curr)
     return res
 
-
-print(partition([1,2,3,4,5], [0,0,0,0,0]))
 
 
