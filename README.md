@@ -6,22 +6,24 @@
 ## Table of Contents
 - [Length](README.md#Length)
 - [Shape](README.md#Shape)
-- [Rank/Depth](README.md#RankDepth)
+- [Rank/Depth](README.md#Rank-Depth)
 - [Take](README.md#Take)
-- [Drop](README.md#Drop)
-- [Range](README.md#Range)
-- [Reverse](README.md#Reverse)
-- [Sort](README.md#Sort)
-- [Nub/Deduplicate](README.md#NubDeduplicate)
-- [Map](README.md#Map)
-- [Fold/Reduce](README.md#FoldReduce)
-- [Scan](README.md#Scan)
-- [Zip/Couple/Stitch](README.md#ZipCoupleStitch)
-- [Keep/Replicate](README.md#KeepReplicate)
-- [Filter](README.md#Filter)
-- [Window/Roll](README.md#WindowRoll)
-- [Group](README.md#Group)
-- [Partition](README.md#Partition)
+- [Drop](#Drop)
+- [Range](#Range)
+- [Reverse](#Reverse)
+- [Sort](#Sort)
+- [Nub/Deduplicate](#Nub/Deduplicate)
+- [Map](#Map)
+- [IndexOf](#IndexOf)
+- [Fold/Reduce](#Fold/Reduce)
+- [Scan](#Scan)
+- [Zip/Couple/Stitch](#Zip/Couple/Stitch)
+- [Keep/Replicate](#Keep/Replicate)
+- [Filter](#Filter)
+- [Window/Roll](#Window/Roll)
+- [Table](#Table)
+- [Group](#Group)
+- [Partition](#Partition)
 
 ## Length
 ```python
@@ -195,6 +197,22 @@ def select(xs : list[int], ys : list[any]) -> list[any]:
     return map(xs, lambda x: ys[x])
 ```
 
+## IndexOf
+```python
+def indexof(xs : list[any], target : any) -> int:
+    """
+    Return the index of an item from a list, returns the size length + 1 when not found
+
+    :param xs:     the list to be searched
+    :param target: the item to be searched for
+    :return:       index of the searched item or length + 1 when not found
+    """
+    for i, x in enumerate(xs):
+        if target == x: return i
+    return len(xs)
+```
+- Often times used with `map` in the form:  `map(lambda e: indexof(xs, e), input_mask)`.
+
 ## Fold/Reduce
 ```python
 def reduce(xs : list[any], f : Callable[[any, any], any], a : any = None) -> any:
@@ -339,6 +357,40 @@ def window(xs : list[any], r : int) -> list[any]:
 ```
 - A special-case of `window` is Python's `pairwise` found in the `itertools` package, which is a *2-wise* or *adjacent* window.
 	- This implementation uses generators.
+
+## Table
+```python
+def table(xs : list[any], ys : list[any], f : Callable[[any, any], any]):
+    """
+    Takes two lists and performs a function f on all pairs of elements between
+    Also known as cartesian product.
+    
+    :param xs: list 1
+    :param ys: list 2
+    :param f:  the binary function to be applied on element pairs
+    :return:   the mapped cartesian product of the two lists
+    """
+    res = [[0] * len(ys) for _ in range(len(xs))]   # initialize the n * m matrix to be returned
+                                                    # n and m being the lengths of xs and ys, respectively
+    for i, x in enumerate(xs):
+        for j, y in enumerate(ys):
+            res[i][j] = f(x, y)
+    return res
+```
+- The same behavior can be trivially implemented with Python comprehensions
+```python
+table(xs, ys, f) == [f(x,y) for x in xs for y in ys]
+```
+- Python has a built-in `product` in found in the `itertools` package, which does the cartesian product part of table.
+	- Therefore, `table` can be written as a map over `product`.
+```python
+def _table(xs : list[any], ys : list[any], f : Callable[[any, any], any]):
+    return map(lambda t : f(t[0],t[1]), product(xs, ys))
+```
+
+## Group
+```
+
 ## Group
 ```python
 def group(xs : list[any], mask : list[int]) -> list[list[any]]:
