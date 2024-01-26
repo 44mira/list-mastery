@@ -36,6 +36,35 @@ def reverse(xs : list[any]) -> list[any]:
         xs[i], xs[len(xs)-i-1] = xs[len(xs)-i-1], xs[i]
     return xs
 
+def rotate(xs : list[any], n : int) -> list[any]:
+    """ 
+    Rotates an array xs to the left by n
+    A negative n makes it rotate to the right instead.
+
+    :param xs: the list to be rotated 
+    :param n:  steps to rotate
+    :return:   rotated list
+    """
+    n %= len(xs)    # rotating at the length of xs goes back to initial state
+    res = xs[n:]        # drop n
+    res.extend(xs[:n])  # take n
+    return res
+
+def transpose(xs : list[list[any]]) -> list[list[any]]:
+    """ 
+    Transposes a list that is at least rank 2, swapping its top 2 ranks.
+    On matrices this would be swapping rows with columns.
+
+    :param xs: the matrix to be transposed
+    :return:   the transposed matrix
+    """
+    res = [[0] * len(xs) for _ in range(len(xs[0]))]   # initialize resulting matrix
+
+    for i in range(len(xs)):
+        for j in range(len(xs[0])):
+            res[j][i] = xs[i][j]
+    return res
+
 def sort(xs : list[any]) -> list[any]:
     """ 
     Sorts a list in ascending order
