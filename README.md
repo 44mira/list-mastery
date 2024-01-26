@@ -425,9 +425,6 @@ def _table(xs : list[any], ys : list[any], f : Callable[[any, any], any]):
 ```
 
 ## Group
-```
-
-## Group
 ```python
 def group(xs : list[any], mask : list[int]) -> list[list[any]]:
     """
