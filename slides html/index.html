@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/night.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.css"> <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js">__SCRIPT_END__
+
+## code instinct:
+#### *List Mastery*
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Pasted image 20240122030334.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>If there is anything that you will eventually find out about having a hobby, or a skill</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Pasted image 20240122030358.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>It is that it is always better as a sport</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+competitive programming
+</div>
+
+<aside class="notes"><p>Competitive programming, or as I would like to call it, Ranked programming, is a sport wherein people like me who like to code but don&#39;t have a job end up. </p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Pasted image 20240122031022.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>I simply got sick of sitting in front of my computer and grinding out videogames such as League of Legends and Valorant. So instead I decided I would sit infront of my computer and grind out coding.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Pasted image 20240122031249.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>This is not me. Most of the time I refer to myself a competitive programming hobbyist, as it is quite difficult to land competitions here in Davao, and when I did get into one <em>ADDU&#39;s Hackathon</em>, I got absolutely obliterated.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Pasted image 20240122031545.png" alt="" style="object-fit: scale-down">
+
+Me:
+</div>
+
+<aside class="notes"><p>By the way, this is me. I&#39;ve only had one other speaking engagement, that being DEVCON&#39;s TechKwentuhan, wherein I did my talk &quot;code poetry,&quot; a prequel to this talk that I am about to give tonight. </p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split even>
+<img src="attachments/Pasted image 20240122032007.png" alt="" style="width: 500px; height: 500px; object-fit: fill">
+
+<img src="attachments/Pasted image 20240122032114.png" alt="" style="width: 500px; height: 500px; object-fit: fill">
+
+</split>
+</div>
+
+<aside class="notes"><p>I am currently the Head of the Skill-Building Department of UP Mindanao SPARCS, which was &quot;founded&quot; by me and my two friends, Sharmaigne and Aaron. It was a &quot;Fine, I&#39;ll do it myself&quot; moment for the three of us as we really just wanted more focus on bridging the gap between beginners and professionals.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### \[\[ digression ]]
+
+
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+</div>
+
+<aside class="notes"><p>I&#39;d like to think that the three of us are pretty active right now in various tech events in Davao, so if you come across us feel free to chat us up or just say hi! The three of us have experience with competitive programmning, Aaron does a lot of volunteer work, and Sharmaigne she&#39;s done 2 hosting events now.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Pasted image 20240122033842.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>Moreover, it was actually Sharmaigne who introduced me to competitive programming, and I still consider her to be much better at it than me. She comes up with the cleverest solutions, and most of the time I just help her write in a language. So yeah, if you see good code of mine, know that Sharmaigne probably helped with it.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### \[\[ end of digression ]]
+
+
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<split gap="1">
+<center>
+<img src="attachments/Pasted image 20240122034255.png" alt="" style="width: 500px; height: 275px; object-fit: fill">
+
+<img src="attachments/Pasted image 20240122035050.png" alt="" style="width: 500px; height: 275px; object-fit: fill">
+
+</center>
+</split>
+</div>
+
+<aside class="notes"><p>So as you might be able to tell, I&#39;m actually not <em>that</em> qualified to be giving this type of talk. I haven&#39;t actually participated in any competitions the past couple of months. </p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+CodeChef leaderboards:
+<split even>
+<img src="attachments/Pasted image 20240122035333.png" alt="" style="object-fit: scale-down">
+
+<img src="attachments/Pasted image 20240122035347.png" alt="" style="object-fit: scale-down">
+
+</split>
+technically Country 12th if I was active
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+so what?
+</div>
+
+<aside class="notes"><p>So what if I do competitive programming? And that&#39;s a valid question.</p>
+<p>The answer: it is the best way to learn Data Structures and Algorithms, because you will <em>have</em> to use Data Structures and Algorithms. DSA is like the programmer&#39;s Calculus, most of them are afraid of it and don&#39;t know how to use them.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Pasted image 20240122040007.png" alt="" style="object-fit: scale-down">
+</div>
+
+<aside class="notes"><p>To put simply, competitive programming doesn&#39;t just train your ability to use data structures, it trains you to see patterns. To be able to code fast and produce efficient algorithms, you have to take advantage of these patterns. If you needed to sort an array of numbers, an algorithm that has been so well known and optimized by programmers way better than you, you shouldn&#39;t have to write your own anymore!</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```python
+
+def sort_nums(arr : list[int]) -> list[int]:
+	arr.sort()       # built-in in-place sort
+	return arr	
+
+
+```
+</div>
+
+<aside class="notes"><p>You&#39;d do something the likes of this Python code. Not only is it terse, it&#39;s also optimized to run at O(n log n) time, which is the fastest a sort can go. Now if this was an exercise on implementing a sorting algorithm, then yes this beats the purpose. But if you were trying to pump out as many solved problems as you can in a competition, this saves you so much time, just because you knew how to use your language to manipulate your array.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Terminologies and Jargon:
+</div>
+
+<aside class="notes"><p>Before we get into the meat of this talk, let&#39;s first define a few terms I might end up throwing around.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h3 style="color: skyblue" >List</h3>
+
+- most flexible data structure
+- used for collections
+- implemented as an *array* or a *linked list*
+</div>
+
+<aside class="notes"><p>They are so flexible in fact that there are languages that have lists as the only data structure, called array languages.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+| <span style="color: skyblue">term</span> | meaning                            |
+| ---------------------------------------- | ---------------------------------- |
+| Element / Atom                           | A singular member of a list        |
+| Rank / Dimension / Axis                  | The level of nesting your list has |
+| Row / Leading Axis                       | The elements at your highest rank  |
+| Length                                   | The number of elements in the row  |
+| Shape                                    | The length of every rank / axis    |
+</div>
+
+<aside class="notes"><p>Note that for the Shape to make sense, all of the lengths in the same dimension must match.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Examples
+```python
+[[1, 2], [2, 3], [3, 4]] # Rank 2, Length 3, Shape [3, 2]
+['a', 'b', 'c']          # Rank 1, Length 3, Shape [3]
+4                        # Rank 0, Length 1, Shape []
+```
+
+```json
+[
+  [
+    [1,2], 
+    [2,3],
+    [3,4]
+  ],         
+  [
+    [3,4], 
+    [4,5],
+    [5,4]
+  ]
+]
+```
+</div>
+
+<aside class="notes"><p>A rank 2 list is also known as a matrix, a rank 1 also known as a vector, and a rank 0 also known as a scalar. Lets take a look at this JSON, Rank 3, Length 2, Shape [2, 3, 2].</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### incase of information overload 
+
+https://github.com/44mira/list-mastery
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<h2><span style="color: #D26500">LIST MASTERY</span></h2>
+</div>
+
+<aside class="notes"><p>and with all of that out of the way, we&#39;ve finally reached the meat of the talk. List manipulation, and eventually, mastery. I&#39;ll go over common patterns in list manipulation, and how I would write them in 3 languages, Python, Elixir, and Uiua.</p>
+<p>All of them will come with an example to demonstrate their usecase.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Length
+
+Given an array `[1,2,3,4,5]`, return its length.
+
+```python
+len([1,2,3,4,5])    # python
+```
+
+ ```elixir
+length [1,2,3,4,5]  # elixir
+```
+
+```elixir
+length [1 2 3 4 5]   # uiua
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Shape
+Return the shape of  `xs`
+
+```elixir
+shape xs
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Rank
+Return the rank of `xs`
+
+```elixir
+length shape xs
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Take
+Return the first 5 elements of `xs`.
+
+```python
+xs[:5]
+```
+
+```elixir
+Enum.take(xs, 5)
+```
+
+```elixir
+take 5 xs
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Drop
+Return `xs` without the first 5 elements
+
+```python
+xs[5:]
+```
+
+```elixir
+Enum.drop(xs, 5)
+```
+
+```elixir
+drop 5 xs
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Range
+Return a list from `0` up to `n-1`
+
+```python
+list(range(n))
+```
+
+```elixir
+Enum.to_list(0..n-1)
+```
+
+```elixir
+range n
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Reverse
+Turn an ascending list `xs` into descending.
+
+```python
+xs.reverse()
+```
+
+```elixir
+Enum.reverse(xs)
+```
+
+```elixir
+reverse xs
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Rotate
+Return `xs` rotated to left by 2.
+
+```python
+n = 2 % len(xs)
+res = xs[n:]
+res.extend(xs[:n])
+res
+```
+```elixir
+n = rem(2, length(xs))
+Enum.drop(xs, n) ++ Enum.take(xs, n)
+```
+```elixir
+rotate n xs
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### \[\[ digression ]]
+
+
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Pasted image 20240126170438.png" alt="" style="object-fit: scale-down">
+
+
+`rotate` can be implemented using `reverse`.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Pasted image 20240126170529.png" alt="" style="object-fit: scale-down">
+
+
+Your split determining how much you want to rotate
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="" flow="col">
+
+<img src="attachments/Pasted image 20240126170944.png" alt="" style="width: 400px; height: 50px; object-fit: fill">
+
+<img src="attachments/Pasted image 20240126171244.png" alt="" style="width: 350px; height: 75px; object-fit: fill">
+
+<img src="attachments/Pasted image 20240126171715.png" alt="" style="object-fit: scale-down">
+
+J, BQN, and APL
+</div>
+</div>
+
+<aside class="notes"><p>Array languages notice this parallel which is why Reverse and Rotate usually share the same glyph/function name.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### \[\[ end of digression ]]
+
+
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Sort
+Return the 3 highest values in `xs`.
+
+```python
+xs.sort(reverse=True)  # descending sort
+xs[3:]
+```
+
+```elixir
+xs
+|> Enum.sort(:desc)
+|> Enum.take(3)
+```
+
+```elixir
+xs
+select fall .
+take 3
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Nub/Deduplicate
+Given a list of `keys`, return all unique keys.
+
+```python
+list(set(keys))  # doesn't retain order
+```
+
+```elixir
+Enum.uniq(keys)
+```
+
+```elixir
+dedup keys
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Higher-order Functions
+</div>
+
+<aside class="notes"><p>Now we reach the part of the talk where we start discussing patterns that utilize functions themselves as arguments. Sometimes called as callback or curried functions.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Map
+Return a list containing the numbers 5 to 10 squared.
+
+```python
+[x**2 for x in range(5,11)]
+```
+
+```elixir
+Enum.map(5..10, fn a -> a ** 2)
+```
+
+```elixir
+range 11
+drop 5
+pow 2
+
+# * . + 5 range 5
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### \[\[ digression ]]
+
+
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+</div>
+
+<aside class="notes"><p>Now you might be thinking, if these patterns are so universal, then how would you even take advantage of these in languages that are much more low-level and lacking in terms of built-in algorithms such as map? Or even the capability of passing functions as arguments in general, like C?</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+    int i, xs[6];
+    for (i = 0; i < 6; i++)   // range
+        xs[i] = i+5;
+    for (i = 0; i < 6; i++)   // map
+        xs[i] = (int) pow(xs[i], 2);
+
+    for (i = 0; i < 6; i++)
+        printf("%d ", xs[i]);
+    return 0;
+}
+```
+
+</div>
+
+  The patterns emerge...
+</div>
+
+<aside class="notes"><p>Moreover, callback functions DO exist in C, in the form of function pointers. Functions, like the rest of your code, reside in memory locations, which is how C handles higher-order functions, passing the function addresses.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int  sqr(int n) { return (int) pow(n, 2); }
+
+void range(int* xs, int s, int e) { 
+    while (s <= e) *xs++ = s++;
+}
+
+void map(int* xs, int n, int f(int)) {
+    for (int i = 0; i < n; i++) xs[i] = f(xs[i]);
+}
+
+int main(void) {
+    int xs[6];
+    range(xs, 5, 10);
+    map(xs, 6, &sqr);
+
+    for (int i = 0; i < 6; i++) {
+        printf("%d ", xs[i]);
+    }
+}
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Pasted image 20240125175646.png" alt="" style="object-fit: scale-down">
+
+In array languages, invalid shapes throw an exception.
+</div>
+
+<aside class="notes"><p>Moreover-- Well that&#39;s just a massive drawback to array languages then. Except it&#39;s not.
+This problem has already come up in languages like C too, and their solution?</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="attachments/Pasted image 20240125175949.png" alt="" style="object-fit: scale-down">
+
+
+</div>
+
+ Pointers!
+</div>
+
+<aside class="notes"><p>Use pointers and references. Now we aren&#39;t violating any shape rules, as we no longer have an array of conflicting shapes, we now have an array of pointers.  And as you may know from C, this is allowed as this lets us define a definite size for our array, the sum of the size of the pointers.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### \[\[ end of digression ]]
+
+
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### IndexOf
+
+Given two lists, `morse` and `english` where conversions share the same index, convert a message from morse code (a list of tokens) to English.
+
+```python
+[ english[ morse.index(letter) ] for letter in message ]
+```
+
+```elixir
+for letter <- message do
+  Enum.at(english, Enum.find_index(morse, letter))
+end
+```
+
+```elixir
+select : english indexof message morse
+```
+</div>
+
+<aside class="notes"><p>halfway there</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Fold/Reduce
+Return the factorial of a number `n`.
+
+```python
+reduce(op.mul, range(1,n+1))
+```
+
+```elixir
+Enum.reduce(1..n, &Kernel.*/2)
+```
+
+```elixir
+/* + 1 range n
+```
+</div>
+
+<aside class="notes"><p>I have some visualizations of this right after I finish all of the remaining functions.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### \[\[ digression ]]
+
+
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Recursion
+
+```elixir
+def factorial1(0), do: 1                    # base case
+def factorial1(n), do: n * factorial1(n-1)
+```
+
+This code can overflow the stack.
+</div>
+
+<aside class="notes"><p>Recursion, chances are you&#39;ve learned about it as a function just calling itself. However, there&#39;s actually an extra bit of intricacy that gets lost when we water it down to that definition. And it&#39;s with how we do the recursion itself. Here we have the expected implementation for a recursive factorial, we say that this is in head-recursive form.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```elixir
+def factorial2(n, acc \\ 1)       # function signature
+def factorial2(0, acc), do: acc   
+def factorial2(n, acc), do: factorial2(n-1, acc * n)
+```
+
+This code never overflows the stack.
+</div>
+
+<aside class="notes"><p>This is the same function, in tail-recursive form. It&#39;s still recursion, but written a little bit differently, and if you notice the pattern has a parallel to a reduce.</p>
+<p>As you may have learned, recursive calls get put on this thing we call the &quot;call stack,&quot; from where the name StackOverflow came from. If you get deep enough with recursion, your computers memory will just give up. But, in functional languages, instead of putting a new stack frame onto the stack when tail-recursion happens, they just reuse the current stack frame resulting in no new allocations.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+Head-recursion
+```elixir
+# factorial1(3)
+# 3 * factorial1(2)
+# 3 * 2 * factorial1(1)
+# 3 * 2 * 1 * factorial1(0)
+# 3 * 2 * 1 * 1
+# 6
+```
+Tail-recursion
+```elixir
+# factorial2(3, 1)  -- 1 is a default argument
+# factorial2(2, 3)  -- 3 * 1
+# factorial2(1, 6)  -- 2 * 3
+# factorial2(0, 6)  -- 6 * 1
+# 6
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### \[\[ end of digression ]]
+
+
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+
+<!-- .slide: class="has-dark-background" data-background-color="black" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Scan
+Check if a string has valid parentheses.
+
+```python
+def validParentheses(string):
+    def f(acc, x): return acc + (1 if x == '(' else -1)
+    def pos(x): return x >= 0
+
+    res = list(accumulate(string, f, initial = 0))
+    return all(map(pos, res)) and res[-1] == 0
+```
+
+```elixir
+defp helper("("), do: 1
+defp helper(")"), do: -1
+def validParentheses(str) do
+  res = str
+  |> String.graphemes
+  |> Enum.map(&helper/1)
+  |> Enum.scan(0, & &1+&2)
+  Enum.all?(res, & &1>=0) and List.last(res) == 0
+end
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```python
+f = (
+  =@(    # mask of 1 and 0
+  -1*2   # mask of 1 and -1
+  scan +
+  fork (/*>=0|=0 first reverse)
+  *      # and
+)
+```
+<pre><code style="font-family: Uiua386"> f ← ×⊃(/×≥0|=0⊢⇌)\+-1×2=@(
+</code></pre>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Zip
+Given a list of x, return the list with every element paired with its index.
+```python
+zip(xs, range(len(xs)))
+# enumerate(xs)
+```
+```elixir
+Enum.zip([xs,0..length(xs)])
+# Enum.with_index(xs)
+```
+```elixir
+couple fork id (range length) xs
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Brevity
+</div>
+
+<aside class="notes"><p>If you&#39;ve been following along on the GitHub handout, I&#39;ll be skipping over some functions that aren&#39;t that relevant in non-array languages, but I&#39;ll cover them later if they come up. Namely: <em>Transpose</em>, <em>Keep</em>, <em>Replicate</em>, <em>Group</em> and <em>Partition</em></p>
+<p>That being said now we are on our last 3 functions to introduce.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Filter
+Return the number of even elements in `xs`
+```python
+len(list(filter(lambda x: ~x&1, xs)))
+```
+```elixir
+xs
+|> Enum.count(&rem(&1,2) == 0) 
+# Enum.count/2 is filter followed by length
+```
+```elixir
+/+ not mod 2 xs  
+# no filter primitive, we do a map and reduce add
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Window/Roll
+Return how many times `xs` increases in value.
+```python
+from itertools import pairwise
+sum(map(lambda a: a[0]<a[1], pairwise(xs)))
+```
+```elixir
+xs
+|> Enum.chunk_every(2,1,:discard) 
+|> Enum.count(fn [a,b] -> a<b end)
+```
+```elixir
+/ + row / > window 2 xs
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Table
+Return an `n x n` multiplication table.
+```python
+[[x*y for y in range(1,n+1)] in range(1,n+1)]
+```
+```elixir
+for x <- 1..n, do: (for y <- 1..n, do: x*y)
+```
+```elixir
+table * . n
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+And that just about does it!
+</div>
+
+<aside class="notes"><p>now we&#39;ll go over a few visualizations I have prepared. Of course no one expects you to be able to absorb all of that especially if that was the first time you&#39;ve encountered these functions, but when you do feel comfortable enough with them, I kid you not you&#39;ll start to see that most problems, especially easy ones, are just a composition of these aforementioned functions.</p>
+<p>Now we&#39;ll move on to the Q&amp;A, and to keep it interesting, while we&#39;re doing it I&#39;ll be taking suggestions on things to try and solve and maybe show the thought process that I take when I approach these problems, especially the ones with elegant list solutions.</p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+#### Q&A and Demo
+</div>
+
+<aside class="notes"><p>Problems:
+1.) Show me a formula to compute how many &quot;friday the 13th&quot; are there between year 2000 - 2023. Show your solution.</p>
+<p>Given:
+A. Jan 1, 2000 is Saturday
+B. CY2000 is a leap year</p>
+<p>2.) <a href="https://projecteuler.net/problem=18">#18 Maximum Path Sum I - Project Euler</a></p>
+<!-- .slide: class="has-dark-background" data-background-color="black" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Thank you!
+
+https://github.com/44mira/list-mastery
+
+https://tinyurl.com/44miraaaa
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+	      RevealPointer,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":false,"slideNumber":false,"transition":"none","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
