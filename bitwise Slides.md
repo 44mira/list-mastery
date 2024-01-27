@@ -273,6 +273,36 @@ range n
 
 ---
 
+#### Concatenate/Join
+Add `[1,2,3]` at the end of `xs`.
+
+```python
+xs + [1,2,3]
+```
+```elixir
+xs ++ [1,2,3]
+```
+```elixir
+join xs [1,2,3]
+```
+
+---
+
+#### Deshape
+Return all of the elements of a matrix `xxs`.
+
+```python
+[x for xs in xxs for x in xs]
+```
+```elixir
+Enum.concat(xxs)
+```
+```uiua
+deshape xxs
+```
+
+---
+
 #### Reverse
 Turn an ascending list `xs` into descending.
 
