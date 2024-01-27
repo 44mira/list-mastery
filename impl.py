@@ -25,6 +25,29 @@ def range(n : int) -> list[int]:
 		count += 1
 	return res
 
+def concat(xs : list[any], ys : list[any]) -> list[any]:
+    """
+    Joins two lists together
+
+    :param xs: list 1
+    :param ys: list to be joined at the end
+    :return:   both lists joined together
+    """
+    for y in ys: xs.append(y)
+    return xs
+
+def deshape(xs : list[list[any]]) -> list[any]:
+    """
+    Returns all of the elements of a matrix.
+
+    :param xs: list to be flattened
+    :return:   flattened list
+    """
+    res = []
+    for row in xs:
+        for x in row: res.append(x)
+    return res
+
 def reverse(xs : list[any]) -> list[any]:
     """ 
     Reverse a list

@@ -3,6 +3,8 @@
 > All of the code will be in Python and will be implemented in a way that prioritizes simplicity over efficiency.
 > **Again, these are not necessarily the optimal way to implement these functions.**
 
+> If you find any issues with the markdown, please file an Issue on the repository.
+
 ## Table of Contents
 - [Length](README.md#Length)
 - [Shape](README.md#Shape)
@@ -10,6 +12,8 @@
 - [Take](README.md#Take)
 - [Drop](README.md#Drop)
 - [Range](README.md#Range)
+- [Concatenate/Join](README.md#ConcatenateJoin)
+- [Deshape/Flatten](README.md#DeshapeFlatten)
 - [Reverse](README.md#Reverse)
 - [Rotate](README.md#Rotate)
 - [Transpose](README.md#Transpose)
@@ -114,6 +118,44 @@ def range(n : int) -> list[int]:
 	return res
 ```
 - Python has a built-in `range` function that utilizes a generator.
+
+## Concatenate/Join
+```python
+def concat(xs : list[any], ys : list[any]) -> list[any]:
+    """
+    Joins two lists together
+
+    :param xs: list 1
+    :param ys: list to be joined at the end
+    :return:   both lists joined together
+    """
+    for y in ys: xs.append(y)
+    return xs
+```
+- Python has a built-in `.extend()` function which is likely to be optimized under the hood.
+    - Adding lists using `+` works too.
+
+## Deshape/Flatten
+```python
+def deshape(xs : list[list[any]]) -> list[any]:
+    """
+    Returns all of the elements of a matrix.
+
+    :param xs: list to be flattened
+    :return:   flattened list
+    """
+    res = []
+    for row in xs:
+        for x in row: res.append(x)
+    return res
+```
+- There's no built-in flatten in python because of the lack of shape enforcing
+    - There is a `flatten` in the NumPy library which requires the input to be an `array` defined in the same library.
+- This implementation only works on matrices.
+    - The same behavior can be implemented trivially using list comprehensions in Python.
+```python
+[y for x in [[1,2,3],[1,2,3]] for y in x] == [1,2,3,1,2,3]
+```
 
 ## Reverse
 ```python
