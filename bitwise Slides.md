@@ -325,9 +325,7 @@ Return `xs` rotated to left by 2.
 
 ```python
 n = 2 % len(xs)
-res = xs[n:]
-res.extend(xs[:n])
-res
+xs[n:] + xs[:n]
 ```
 ```elixir
 n = rem(2, length(xs))
